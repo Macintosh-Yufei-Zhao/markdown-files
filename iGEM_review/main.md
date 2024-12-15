@@ -24,6 +24,9 @@ iGEM，全称国际基因工程机器大赛（international genetically engineer
 
 ## iGEM比赛的一些tips
 
+### **1.项目的选择**
+
+
 
 ## 其他的一些QA（可能不全，欢迎评论补充）
 
