@@ -333,7 +333,7 @@ A simple HMM: 4 states {intergenic, start, stop, coding}. Existing gene finders 
 The Viterbi Exon-Intron Locator (VEIL) was developed by John Henderson, Steven Salzberg, and Ken Fasman at Johns Hopkins University.
 Gene ﬁnder with a modular structure: Uses a HMM which is made up of sub-HMMs each to describe a diﬀerent bit of the sequence: upstream noncoding DNA, exon, intron, etc.; Uses biological knowledge to “hardwire”part of HMM, eg. start + stop codons, splice sites. Below are the basic structure of VEIL.
 
-![1.png](D:\GithubRepo\markdown-files\24fall-biostat\biostat2\1.png)
+![1.png](1.png)
 
 ### Genescan
 
@@ -349,7 +349,7 @@ Features of Genescan:
 - Parameters learned from annotated genes
 - Prediction of multiple genes in a sequence (partial or complete)
 
-![2.png](D:\GithubRepo\markdown-files\24fall-biostat\biostat2\2.png)
+![2.png](2.png)
 
 > N - intergenic region
 P - promoter
