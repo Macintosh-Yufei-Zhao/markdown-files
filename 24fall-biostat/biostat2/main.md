@@ -82,7 +82,7 @@ $$L_{ij}=\begin{cases}
 f^*_{ij}\pi_j& \text{j is current but i is temporary}
 \end{cases}$$
 
-For a interconnected recurrent Markov chain, 
+For a interconnected recurrent Markov chain,
 $$\lim_{n\to \infty}\frac{1}{n}\sum_{k=1}^n P^k\to (1,\dots,1,\dots)^T(\pi_1,\dots,\pi_N,\dots)$$
 $\pi_i$ is either all positive or all 0.
 
