@@ -49,11 +49,58 @@ For traceback, find the maximum in the matrix as the start point, and trace to 0
 
 ## Alignment as pairwise HMM
 
+- Hidden states: match(M), insertion in x(X), insertion in y(Y);
+- Observation symbols: match(a,b), insertion in x(a,-), insertion in y(-,a)
+- TPM$\begin{pmatrix}1-2\delta&1-\epsilon&1-\epsilon\\\delta&\epsilon&0\\\delta&\epsilon&0\end{pmatrix}$
+- Emission probability: $P(M)=P_{x_i,y_j},P(X)=q_{x_i},P(Y)=q_{y_j}$. M can only emit M, and so on.
 
+Here, for an alignment of AT-GTTAT and ATCGT-AC, the hidden state path is MMYMMXMM. Based on the HMM, each alignment of two DNA/protein sequences can be assigned with a probability score; Each “observation symbol” of the HMM is an aligned pair of two
+letters, or of a letter and a gap. The Markov chain of hidden states should represent a scoring scheme reﬂecting an evolutionary model(somehow like K80, I guess). Transition and emission probabilities deﬁne the probability of each aligned pair of sequences. Given two input sequences, we look for an alignment of these two sequences of maximum probability.
 
+For each pair of sequences x (of length m) and y (of length n), there are many alignments of x and y, each corresponds to a diﬀerent state sequence (with the length between $\max(m, n)$ and $m + n$). Given the transmission and emission probabilities, each alignment has a deﬁned score – the product of the corresponding probabilities. An alignment is “most probable”, if it maximizes this score.
 
+**Viterbi algorithm**
 
+Let $v^M(i, j)$ be the probability of the most probable alignment of $X(1, \cdots, i)$ and $Y(1, \cdots, j)$, which ends with a match (state M). Similarly, $v^X(i, j)$ and $v^Y(i, j)$, the probabilities of the most probable alignment of $X(1, \cdots, i)$ and $Y(1, \cdots, j)$, which ends with states $X$ or $Y$, respectively. Similar argument for $v^X(i,j)$ and $v^Y(i,j)$.
+$$
+v^M(i, j) = p_{X_i, Y_j} \max \left(
+\begin{array}{c}
+(1 - 2\delta) v^M(i-1, j-1) \\
+(1 - \epsilon) v^X(i-1, j-1) \\
+(1 - \epsilon) v^Y(i-1, j-1)
+\end{array}
+\right)\\
+v^X(i, j) = q_{X_i} \max \left(
+\begin{array}{c}
+\delta v^M(i-1, j) \\
+\epsilon v^X(i-1, j)
+\end{array}
+\right) \\
+v^Y(i, j) = q_{Y_j} \max \left(
+    \begin{array}{c}
+\delta v^M(i, j-1) \\
+\epsilon v^Y(i, j-1)
+\end{array}
+\right)
+$$
 
+Adding termination: The last transition in each alignment is to the END state, with probability $\tau$; For this, an END state is added, with transition probability $\tau$ from any other state to END. This assumes expected sequence length of $1/\tau$.Written in TPM of X, Y and END, 
+$$A=\begin{pmatrix}1-\tau&\tau&0\\0&1-\tau&\tau\\0&0&1\end{pmatrix}$$
+And full pair HMM model is shown below:
+
+![]()
+
+## Scoring an alignment: random alignment
+
+We wish to know if the alignment score is above or below the score of random alignment of sequences with the same length. We need to model random sequence alignment by HMM, with end
+state. This model assigns probability to each pair of sequences X and Y of arbitrary lengths m and n.
+
+![]()
+
+Thus, the probability of random X (length n) and Y (length m) is 
+$$P(X,Y|random)=\eta^2(1-\eta)^{n+m}\prod_{i=1}^nq_{X_i}\prod_{j=1}^mq_{Y_j}$$
+and the corresponding score is 
+$$\log P=2\log \eta +(n+m)\log(1-\eta)+\sum_i^n\log q_{X_i}+\sum_j^m\logq_{Y_j}$$
 
 # Multiple alignment: Profile HMM
 
