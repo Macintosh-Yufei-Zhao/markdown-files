@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight into a biological dynamic system</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="motif" class="logo">
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="scrollToSection('1')">Introduction</button>
+            <button class="nav-button" onclick="scrollToSection('2')">Publications</button>
+            <button class="nav-button" onclick="scrollToSection('3')">Tools</button>
+            <button class="nav-button" onclick="scrollToSection('4')">Noise</button>
+        </div>
+    </header>
+    <h1>Insight into a biological dynamic system</h1>
+    <div class="content">
+        <div id="1" class="section">
+            <h2>Introduction</h2>
+            <div class="text-box">
+                <h3>What is a dynamic system?</h3>
+                <p>A dynamic system refers to a system whose state evolves over time according to a fixed rule. The state of a dynamic system can be represented by a set of variables, which can be discrete or continuous. These variables change based on certain rules or equations, often referred to as the system's dynamics.</p>
+                <p>Dynamic systems can be broadly classified into deterministic and stochastic systems. In deterministic systems, the future state is uniquely determined by the current state and the governing laws. For example, the motion of celestial bodies under gravitational forces follows deterministic dynamics. Stochastic systems, however, involve randomness in their evolution. The state changes not only depend on current conditions but also incorporate random elements, such as stock market fluctuations influenced by various unpredictable factors.</p>
+                <p>The study of dynamic systems aims to understand their behavior over time, including stability, equilibrium points, periodicity, and chaos. This knowledge is crucial in numerous fields like physics, engineering, biology, and economics. For instance, controlling the dynamics of a mechanical system to achieve desired motion or analyzing population dynamics in an ecosystem both rely on understanding dynamic system principles.</p>
+            </div>
+
+            <div class="text-box">
+                <h3>Dynamic Systems in Biological Systems</h3>
+                <p>Dynamic systems are prevalent in biological systems, playing pivotal roles in various life processes. At the molecular level, protein-DNA interactions and metabolic pathways exemplify dynamic systems. These interactions follow specific rules and change over time, regulating gene expression and cellular metabolism. For instance, transcription factors binding to DNA sequences dynamically control gene activation or repression, influencing cellular responses to internal and external stimuli.</p>
+                <p>On the cellular scale, cell cycle progression and signal transduction pathways are dynamic. The cell cycle is strictly regulated by a series of biochemical reactions and protein modifications. These dynamic processes ensure proper cell division and growth. Similarly, signal transduction pathways involve the flow of information from cell surface receptors to intracellular targets, dynamically adjusting cellular functions based on signals.</p>
+                <p>In ecology, population dynamics of species in an ecosystem constitute a dynamic system. Factors like birth rates, death rates, predation, and resource availability influence population sizes over time. Understanding these dynamics helps predict ecosystem changes and manage biodiversity.</p>
+                <p>The study of dynamic systems in biological systems is significant for comprehending life mechanisms, disease development, and ecological stability. It aids in developing therapeutic strategies for diseases by targeting specific dynamic processes and provides insights into ecosystem management, promoting the sustainable development of biological systems.</p>
+            </div>
+
+            <div class="text-box">
+                <h3>How to study a dynamic system?</h3>
+                <p>Up to now, we still do not have too much ability to see a general differential equation set in a totally analytical way.</p>
+                <p>Analytically, we are more interested in the behaviour of the system around its fixed point. A linear expansion of the function, namely the Jacobian matrix, is a good way to see how it will evolve as time goes by. The eigenvalues of the matrix determines whether the system will fall into or out of the fixed point. Also, the Poincare-Bendixson theorem offers more qualitative conclusions about how stable fixed points, saddle-nodes and limit cycles define the whole behavior of a system.</p>
+                <p>For a too complicated system, to find answers analytically is impossible. An alternative is to set a starting point and use numerical methods to see how the system will evolve, especially its asymptotic state. This is often achieved with computer programs like scipy.integrate.solve_ivp in Python or ode45 in Matlab. The mostly used method is Runge-Kutta method, which guarantees quite high accuracy while making the simulation not too slow. Usually a system with less than 10 variables can be simulated for 1000 time units in less than a minute.</p>
+            </div>
+        </div>
+        
+        <div id="2" class="section">
+            <h2>Publications</h2>
+            <div class="text-box">
+                <h3>Dynamic Models in Biology</h3>
+                <p><i>Written by Stephen P. Ellner and John Guckenheimer</i></p>
+                <p>Ellner and Guckenheimer's work on mathematical models in biology offers significant insights into the dynamic systems within biological contexts. His research emphasizes how mathematical frameworks can elucidate complex biological processes. By applying concepts from dynamical systems theory, Guckenheimer explores various biological phenomena, such as population dynamics and neuronal activity. His models help in understanding the underlying mechanisms and predicting behaviors in biological systems. These contributions are crucial for advancing interdisciplinary approaches in biology, bridging mathematical theories with real-world biological applications and fostering a deeper comprehension of life sciences through quantitative methods. <a href="Dynamic Models in Biology (Stephen P. Ellner, John Guckenheimer) (Z-Library).pdf">click here to download</a></p>
+            </div>
+            
+            <div class="text-box">
+                <h3>An Introduction to Systems Biology</h3>
+                <p><i>Written by Uri Alon</i></p>
+                <p>Uri Alon's book Introduction to Systems Biology provides readers with a solid foundation in the field. It emphasizes the importance of understanding the design principles of biological systems. By analyzing various cellular networks and their dynamic behaviors, the book explains how these systems perform specific functions. It introduces key concepts like feedback loops and network motifs, helping readers grasp the complex interactions within biological systems. This work serves as a valuable guide for those entering the field, offering insights into how mathematical and computational approaches can be applied to study biological systems.<a href="An introduction to systems biology 2ed.pdf">click here to download</a></p>
+            </div>
+            
+            <div class="text-box">
+                <h3>Introduction to Nonlinear Systems and Chaos</h3>
+                <p><i>Written by Steven Strogatz</i></p>
+                <p>Steven Strogatz's Introduction to Nonlinear Systems and Chaos is a highly - regarded book that provides a comprehensive introduction to the field. It covers a wide range of topics, including phase plane analysis, bifurcation theory, and chaos. The book presents these concepts in a clear and accessible way, with numerous examples and applications. Strogatz emphasizes the importance of understanding the qualitative behavior of nonlinear systems and how they can exhibit complex and unpredictable dynamics. The book also highlights the connections between nonlinear systems and various fields such as physics, biology, and engineering. It serves as a valuable resource for students and researchers interested in exploring the fascinating world of nonlinear dynamics and chaos.<a href="Nonlinear Dynamics and Chaos (Steven H. Strogatz) (Z-Library).pdf">click here to download</a></p>
+            </div>
+
+            <div class="text-box">
+                <h3>Introduction to Applied Nonlinear Dynamical Systems and Chaos</h3>
+                <p><i>Written by Stephen Wiggins</i></p>
+                <p>Introduction to Applied Nonlinear Dynamical Systems and Chaos by Stephen Wiggins is a comprehensive text that delves into the fascinating field of nonlinear dynamics and chaos theory. The book explores the behavior of nonlinear dynamical systems, focusing on concepts like phase space, stability, bifurcations, and chaotic dynamics. Wiggins presents these topics in a rigorous yet accessible manner, providing readers with a solid understanding of the mathematical foundations and analytical techniques used to study such systems. It covers a range of applications, from physics and engineering to biology and chemistry, illustrating the broad relevance of nonlinear dynamics in various scientific disciplines. This work serves as an excellent resource for graduate students and researchers interested in exploring the complex and often unpredictable behavior of nonlinear systems.<a href="Introduction to applied nonlinear dynamical systems and chaos (Wiggins S.) (Z-Library).pdf">click here to download</a></p>
+            </div>
+        </div>
+        
+        <div id="3" class="section">
+            <h2>Tools</h2>
+            <div class="text-box">
+                <h3>Python</h3>
+                <p>Python is a programming language that lets you work quickly and integrate systems more effectively. The python language is closer to natural languages and thus better to understand and master. As an open language, the Python community provides users with a wide variety of packages which could satisfy almost every requirement of its users. For dynamic systems, the mostly used packages are: NumPy for ordinary math calculations and setting, SciPy for specific requirements and so on.</p>
+                <p>The Jupyter Notebook is an integrated file type with Python. A Jupyter Notebook consists of 'code blocks' and 'text blocks', and you can run each block seperately and see the outputs instantly. This tool largely increases debugging efficiency and allows you to add formulas, notes and other information to a traditional Python file and make your code more readable. Also, the plugins allows you to check the value of your variables, which rescues debugging from countless of 'printf's. <a href="https://www.python.org/">the Python official site</a></p>
+            </div>
+
+            <div class="text-box">
+                <h3>Matlab</h3>
+                <p>Matlab is another powerful tool in computer simulation. Compared to Python, Matlab is specifically developed for scientific calculation and simulation. The owner MathWorks company offers lots of toolboxes and built-in applications to achieve almost every function you want. PKU offers free access to Matlab, so it is another convenient way to simulate the system. Since it is originally designed to do matrices work, it is usually faster than the all-in-one Python. Plus, its grammar is more natural, and one can learn to write Matlab codes in five minutes. <a href="https://www.mathworks.com/products/matlab.html">the Matlab official site</a></p>
+            </div>
+        </div>
+        
+        <div id="4" class="section">
+            <h2>Noise</h2>
+            <div class="text-box">
+                <h3>Importance</h3>
+                <p>Noise plays a crucial yet often underestimated role in biological dynamical systems. In these systems, noise isn't merely unwanted interference. It can significantly impact system behavior and functionality.</p>
+                <p>At the molecular level, biochemical reactions are subject to noise due to the small number of molecules involved. This noise can influence gene expression, leading to variability among cells. In cellular processes, noise can affect signal transduction pathways, altering cellular responses to signals. In neural systems, noise can impact the firing of neurons and the propagation of neural signals. It may also play a role in the synchronization of neural activity.In ecological systems, environmental noise can influence population dynamics and ecosystem stability. It can drive fluctuations in population sizes and affect species interactions.</p>
+                <p>The study of noise in biological dynamical systems helps us gain a more comprehensive understanding of how these systems function under real - world conditions. It provides insights into the robustness and adaptability of biological systems and can aid in developing more accurate models and predictions.</p>
+            </div>
+
+            <div class="text-box">
+                <h3>Stochastic differential equations</h3>
+                <p>Stochastic differential equations are equations describing how variables change over time. Different from traditional ODEs, the equation includes a term dW which describes a stochastic process(known as the Wiener process). This kind of equations allow noise to have effect on the dynamical behaviour of the system, and multiplying specific expressions of either time or state variables to the stochastic term makes it possible to explicitly see how noise works to shape the system.</p>
+            </div>
+            
+            <div class="text-box">
+                <h3>Analysis and simulations</h3>
+                <p>With the growing recognition of noise's importance in dynamical systems, especially biological ones, various computational and simulation methods have been developed to study stochastic dynamical systems.</p>
+                <p>One crucial aspect is the stochastic integral convention. The Itô integral and Stratonovich integral are two primary conventions. The Itô integral is based on non - anticipative functionals and has strong mathematical foundations, widely used in finance and engineering. The Stratonovich integral, however, preserves the classical chain rule of calculus and is more intuitive for physical systems.</p>
+                <p>For simulating biochemical reaction systems with discrete molecules and stochastic reactions, the Gillespie algorithm is a classic and exact method. It simulates the time evolution of the system by generating random reaction times and types according to their propensities, providing a detailed view of the system's stochastic behavior.</p>
+                <p>The Fokker - Planck equation is another important tool. It describes how the probability density function of a stochastic system's state evolves over time. It's a partial differential equation that provides a continuous - time and continuous - state approximation of the system. Solving the Fokker - Planck equation can offer insights into the system's long - term behavior and stability.</p>
+                <p>These methods, along with others like the τ - leap method which balances accuracy and computational efficiency, enable researchers to better understand and analyze the complex dynamics of stochastic dynamical systems in various fields.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact me</h3>
+                <div class="contact-info">
+                    <p><strong>Address: 5th Yiheyuan Rd, Haidian District, Beijing, China</strong></p>
+                    <p><strong>E-mail: </strong><a href="sdzhaoyufei@stu.pku.edu.cn">sdzhaoyufei@stu.pku.edu.cn</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow me</h3>
+                <div class="contact-info">
+                    <p>WeChat: sdzhaoyufei2004</p>
+                    <p>Bilibili: <a href="https://space.bilibili.com/380035309">江州司马平安否</a></p>
+                    <p>Github: <a href="https://github.com/Macintosh-Yufei-Zhao/">Macintosh-Yufei-Zhao</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
